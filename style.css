@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(95deg, #ffc86e, #ff94b3);
+}
+
+.container {
+    width: 50%;
+    height: min-content;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.head {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.head h1 {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 15px 3px;
+}
+
+.head img {
+    width: 5vh;
+    margin-left: 10px;
+}
+
+.text {
+    display: flex;
+}
+
+.text input {
+    flex-basis: 80%;
+    color: #8c8c8c;
+    padding: 10px 20px;
+    font-size: 25px;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    border-end-start-radius: 6px;
+    border-start-start-radius: 6px;
+    background-color: #e2e2e2;
+}
+
+.text button {
+    flex-basis: 20%;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 25px;
+    font-weight: 400;
+    border: none;
+    border-start-end-radius: 6px;
+    border-end-end-radius: 6px;
+    background: orange;
+}
+
+.text button:active {
+    background: #ff5945;
+    color: white;
+}
+
+.lists {
+    margin-top: 15px;
+}
+/* .lists label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.lists li {
+    list-style: none;
+    color: black;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 20px 10px;
+    cursor: pointer;
+}
+
+.lists li::before {
+    content: "";
+    padding: 5px 18px;
+    margin: 10px;
+    background-image: url('images/unchecked.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.check::before{
+    content: "";
+    text-decoration: line-through;
+    padding: 5px 18px;
+    margin: 10px;
+    background-image: url('images/checked.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+span{
+    margin-left: 100px;
+    color: #8c8c8c;
+    background: #e2e2e2;
+    border-radius: 50%;
+    padding: 4px 6px;
+}
+.lists span:hover{
+    color: #fff;
+    background: #ff5945;
+}
