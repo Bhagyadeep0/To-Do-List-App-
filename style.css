@@ -92,7 +92,7 @@ body {
     cursor: pointer;
 }
 
-.lists .uncheck::before {
+.uncheck::before, .check::before {
     content: "";
     padding: 5px 18px;
     margin: 10px;
@@ -100,20 +100,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
-    z-index: -1;
 }
 .check{
     text-decoration: line-through;
 }
 .check::before{
-    content: "";
-    padding: 5px 18px;
-    margin: 10px;
     background-image: url('images/checked.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 50%;
-    z-index: 1;
+    z-index: auto;
 }
 
 span{

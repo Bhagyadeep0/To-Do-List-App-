@@ -2,8 +2,6 @@ const input = document.querySelector(".text input");
 const lists = document.querySelector(".lists ul");
 
 
-
-
 const submit = () => {
     if (input.value === "") {
         alert("To-Do list cannot be empty");
@@ -15,7 +13,7 @@ const submit = () => {
         //list tag created and added to label tag 
         let list = document.createElement("li");
         list.innerText = input.value;
-        list.classList.add("uncheck")
+        list.classList.add("uncheck");
         listLabel.appendChild(list);
         
         // sapn tag created and added to label tag
@@ -25,20 +23,25 @@ const submit = () => {
         
         // label tag created and added to ul tag
         lists.appendChild(listLabel);
-        
-        // check and uncheck function
-        list.addEventListener("click", () => {
-            list.classList.toggle("uncheck");
-            list.classList.toggle("check");
-            console.log("class is toggled");
-        })
-        // delete function
-        listSpan.onclick = () => {
-            lists.removeChild(listLabel);
-        }
+        saveList();
     }
     input.value = "";
 }
+// check un check and delete button added
+lists.addEventListener('click',(e)=>{
+    if(e.target.tagName === 'LI'){
+        e.target.classList.toggle("check");
+    }
+    else if (e.target.tagName === 'SPAN'){
+        e.target.parentElement.remove();
+    }
+})
 
+function saveList(){
+    localStorage.setItem('list',lists.innerHTML);
+}
+function showList(){
+    lists.innerHTML = localStorage.getItem('list');
+}
 
-
+showList();
